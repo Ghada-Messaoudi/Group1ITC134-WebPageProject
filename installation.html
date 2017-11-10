@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Installation Manuel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog-post.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">IT Geeks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>Cygwin Installation Steps</h1>
+            <p class="lead">Let's assume that your USB flash drive is on E:</p>
+            <ol>
+                <li>In your FileExplorer, create a folder at E:\PortableApps\CygwinPortable\packages</li>
+                <li>Download the Cygwin installer executable file (*.exe filename). In a web browser, goto https://www.cygwin.com/install.html
+                    . Click on setup-x86_64.exe link to download into your Downloads folder.</li>
+                <li>In your FileExplorer, copy from your Downloads folder the “setup-x86_64.exe” file to your E:\PortableApps\CygwinPortable
+                    directory.
+                </li>
+                <li>Install Cygwin by clicking upon the “setup-x86_64.exe” file.</li>
+                <li>In new window “User Account Control” click “Yes”</li>
+                <li>Click “Next>” on first dialog install window.</li>
+                <li>On next window, select “Install from Internet”. Then click “Next>”.</li>
+                <li>In next window, browse or type “E:\PortableApps\CygwinPortable” to be root directory.</li>
+                <li>Then select “All Users (RECOMMENDED)” for install. Then click “Next>”.</li>
+                <li>On next window, browse or type “E:\PortableApps\CygwinPortable\packages” for Local Package Directory. Then
+                    click “Next>”.</li>
+                <li>In next window, select “Direct Connection” for Select Your Internet Connection. Then click “Next”.</li>
+                <li>The next window asks for Choose A Download Site. In your web browser, goto https://cygwin.com/mirrors.html
+                    . From here, determine the best site to download nearest to your location. For the Seattle Central College
+                    (SCC) students, choose Washington: http://mirrors.metapeer.com . Then click “Next>”.</li>
+                <li>Next page will be downloading status page. When done, the window will close and a new window will open called
+                    “Select Packages”. </li>
+                <li>In “Select Packages” window, click “Next>”. </li>
+                <li>In next window, ensure/select “Select required packages (RECOMMENDED)”. Then click “Next>”.</li>
+                <li>Next page will be ANOTHER downloading status page. THIS WILL TAKE ABOUT FIVE (5) TO TEN (10)MINUTES OF TIME
+                    WAITING. When done, the window will close and a new window will open called “Create Icons” and “Installation
+                    Status”. Make sure NO boxes are selected/checked. Then click “Finish”. This means on the bare-bones default
+                    Cygwin packages have been installed.</li>
+                <li>Now that the Cygwin install is done, you need to create the command-line Terminal Window short-cut on USB
+                    Stick. So, in your FileExplorer, in folder “E:\PortableApps\CygwinPortable”, right-click and select “New
+                    >” then select “Shortcut”. In “Create Shortcut” window, type “E:\PortableApps\CygwinPortable\bin\mintty.exe
+                    -i /Cygwin-Terminal.ico -” . Then click on “Next “. In next window, type in “Cygwin_Linux_Terminal”</li>
+            </ol>
+            <h3> . . . . . . NOW, you can finally double-click on “Cygwin_Linux_Terminal” icon to launch a Cygwin-Linux Command
+                Line Terminal window with “bash” linux-shell. Now, keep this Terminal-Window open while we setup gVim text-editor
+                and TkDiff code-debugger tool.</h3>
+
+            <hr>
+
+            <h1>gVim Installation Steps</h1>
+            <ol>
+                <li>In a web browser, goto http://www.vim.org/download.html .  Click on “self-installing executable” link in order to download gVim installing executable file.</li>
+                <li>In your FileExplorer, copy from your Downloads folder the “gvim[VERSION_NUMBER].exe” file to your E:\PortableApps\CygwinPortable directory.  For this cheatsheet, we will call this file “gvim80-586.exe”.</li>
+                <li>Install gVim by clicking upon the “gvim80-586.exe” file.</li>
+                <li>In new window “User Account Control” click “Yes”</li>
+                <li>In next window, click “Yes”.</li>
+                <li>In new window, click “I Agree” .</li>
+                <li>In next window, click “Next >”</li>
+                <li>In new window, browse or type “E:\PortableApps\CygwinPortable\Vim”.  Click on “Install” button.</li>
+                <li>In “Completed” window, click “Close” button.</li>
+                <li>In next window, click “No” button.</li>
+            </ol>
+            <h3> THAT gVim is installed, we need to perform some Linux functions to make gVim usable in Cygwin-Linux-Terminal.</h3>
+
+        </div>
+
+    </main>
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
