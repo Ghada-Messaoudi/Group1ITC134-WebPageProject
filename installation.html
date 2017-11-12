@@ -15,6 +15,17 @@
     <!-- Custom styles for this template -->
     <link href="css/blog-post.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style media="screen" type="text/css">
+        #h11 {
+            font-family: "Courier New";
+            color: rgb(255, 255, 0);
+            font-style: italic;
+            background-color: rgb(0, 0, 255);
+        }
+        #file {
+           background-color: rgb(255, 255, 0); 
+        }
+    </style>
 </head>
 
 <body>
@@ -42,12 +53,12 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <h1>Cygwin Installation Steps</h1>
+            <h1 id="h11">Cygwin Installation Steps</h1>
             <p class="lead">Let's assume that your USB flash drive is on E:</p>
             <ol>
                 <li>In your FileExplorer, create a folder at E:\PortableApps\CygwinPortable\packages</li>
-                <li>Download the Cygwin installer executable file (*.exe filename). In a web browser, goto https://www.cygwin.com/install.html
-                    . Click on setup-x86_64.exe link to download into your Downloads folder.</li>
+                <li>Download the Cygwin installer executable file (*.exe filename).  In a web browser, goto <a href="https://www.cygwin.com/install.html">https://www.cygwin.com/install.html</a> .
+                    Click on setup-x86_64.exe link to download into your Downloads folder.</li>
                 <li>In your FileExplorer, copy from your Downloads folder the “setup-x86_64.exe” file to your E:\PortableApps\CygwinPortable
                     directory.
                 </li>
@@ -55,8 +66,7 @@
                 <li>In new window “User Account Control” click “Yes”</li>
                 <li>Click “Next>” on first dialog install window.</li>
                 <li>On next window, select “Install from Internet”. Then click “Next>”.</li>
-                <li>In next window, browse or type “E:\PortableApps\CygwinPortable” to be root directory.</li>
-                <li>Then select “All Users (RECOMMENDED)” for install. Then click “Next>”.</li>
+                <li>In next window, browse or type “E:\PortableApps\CygwinPortable” to be root directory.Then select “All Users (RECOMMENDED)” for install. Then click “Next>”.</li>
                 <li>On next window, browse or type “E:\PortableApps\CygwinPortable\packages” for Local Package Directory. Then
                     click “Next>”.</li>
                 <li>In next window, select “Direct Connection” for Select Your Internet Connection. Then click “Next”.</li>
@@ -75,27 +85,86 @@
                     Stick. So, in your FileExplorer, in folder “E:\PortableApps\CygwinPortable”, right-click and select “New
                     >” then select “Shortcut”. In “Create Shortcut” window, type “E:\PortableApps\CygwinPortable\bin\mintty.exe
                     -i /Cygwin-Terminal.ico -” . Then click on “Next “. In next window, type in “Cygwin_Linux_Terminal”</li>
+                <li>HURRAH . . . . . . NOW, you can finally double-click on “Cygwin_Linux_Terminal” icon to launch a Cygwin-Linux
+                    Command Line Terminal window with “bash” linux-shell.</li>
+                <li>Now, keep this Terminal-Window open while we setup <a id="h11">gVim text-editor</a> and <a id="h11">TkDiff code-debugger</a> tool.</li>
             </ol>
-            <h3> . . . . . . NOW, you can finally double-click on “Cygwin_Linux_Terminal” icon to launch a Cygwin-Linux Command
-                Line Terminal window with “bash” linux-shell. Now, keep this Terminal-Window open while we setup gVim text-editor
-                and TkDiff code-debugger tool.</h3>
 
             <hr>
 
-            <h1>gVim Installation Steps</h1>
+            <h1 id="h11">gVim Installation Steps</h1>
             <ol>
-                <li>In a web browser, goto http://www.vim.org/download.html .  Click on “self-installing executable” link in order to download gVim installing executable file.</li>
-                <li>In your FileExplorer, copy from your Downloads folder the “gvim[VERSION_NUMBER].exe” file to your E:\PortableApps\CygwinPortable directory.  For this cheatsheet, we will call this file “gvim80-586.exe”.</li>
+                <li>In a web browser, goto http://www.vim.org/download.html . Click on “self-installing executable” link in order
+                    to download gVim installing executable file.</li>
+                <li>In your FileExplorer, copy from your Downloads folder the “gvim[VERSION_NUMBER].exe” file to your E:\PortableApps\CygwinPortable
+                    directory. For this cheatsheet, we will call this file “gvim80-586.exe”.</li>
                 <li>Install gVim by clicking upon the “gvim80-586.exe” file.</li>
                 <li>In new window “User Account Control” click “Yes”</li>
                 <li>In next window, click “Yes”.</li>
                 <li>In new window, click “I Agree” .</li>
                 <li>In next window, click “Next >”</li>
-                <li>In new window, browse or type “E:\PortableApps\CygwinPortable\Vim”.  Click on “Install” button.</li>
+                <li>In new window, browse or type “E:\PortableApps\CygwinPortable\Vim”. Click on “Install” button.</li>
                 <li>In “Completed” window, click “Close” button.</li>
                 <li>In next window, click “No” button.</li>
+                <li>NOW THAT gVim is installed, we need to perform some Linux functions to make gVim usable in Cygwin-Linux-Terminal.</li>
+                <li>In Terminal-Window, at command prompt, type the following Linux commands:</li>
+                    <a id="h11">cd /</a><br>
+                    <a id="h11"> ln -s /Vim/vim80/gvim.exe /bin/.</a><br>
+                <li>ALMOST MOST DONE.  Next, you need to add the following lines to end of the gVim “ _vimrc ” runtime config file located at "E:\PortableApps\CygwinPortable\Vim\_vimrc" :<br>
+                    <i>colorscheme blue<br>
+                    set guifont=Lucida_Console:h18<br>
+                    set number<br></i>
+                    This will allow gVim to open up with dark-blue background, fixed-width font of size 18, and line numbers shown on the left-side of the gVim text editor window.</li>
+                <li>Now you can launch gVim text editor.  You should Google search “gVim basics” or “gVim tutorial” to run thru some basics.  It will seem a little difficult at first toggling 
+                    between “[ESC]-KEY Command Mode” and “[I]-Key Insert/Edit Mode”.  However, once you have spent a day messing around with gVim, you will be able to code with VERY LIMITED MOUSE involvement. 
+                    Plus, with the added power of regular expression search/replace, you will have major editing upgrade vs. the simple “CTRL-H” Search/Replace in other Windows editors like Notepad, Wordpad, IDLE_for_Python, etc.</li>
+                <li>To launch gVim, simply goto into your open Cygwin_Terminal command line window and type at command prompt “ gvim FILE1 & “ .</li>
             </ol>
-            <h3> THAT gVim is installed, we need to perform some Linux functions to make gVim usable in Cygwin-Linux-Terminal.</h3>
+
+            <hr>
+            
+            <h1 id="h11">TkDiff Installation Steps</h1>
+            <ol>
+                <li>In a web browser, goto https://sourceforge.net/projects/tkdiff  .  Click on green and white “Download” button link in order to download TkDiff installing executable file.</li>
+                <li>In your FileExplorer, copy from your Downloads folder the “TkDiff[VERSION_NUMBER]-Setup.exe” file to your E:\PortableApps\CygwinPortable directory.  For this cheatsheet, we will call this file “TkDiff-4.2.exe”.</li>
+                <li>Install gVim by clicking upon the “TkDiff-4.2.exe” file.</li>
+                <li>In new window “User Account Control” click “Yes”</li>
+                <li>In next window, click “Yes”.</li>
+                <li>In new window, click “Next >” .</li>
+                <li>In next window, click “Browse... ” and select/type in “E:\PortableApps\CygwinPortable\TkDiff”. Then, click “Ok”.  Then, click “Next >”.</li>
+                <li>In new window, click “Next >”.</li>
+                <li>In next window, de-select “View Readme”, “Create Desktop Shortcut”, and “Create Quick Launch Shortcut”.  Then, click “Finish”.</li>
+                <li>NOW THAT TkDiff is installed, we need to perform some Linux functions to make TkDiff usable in Cygwin-Linux-Terminal.</li>
+                <li>In Terminal-Window, at command prompt, type the following Linux commands:<br>
+                    <i>cd /<br>
+                    ln -s /TkDiff/tkdiff.exe /bin/.<br></i></li>
+                <li>Create two text files called FILE1 and FILE2 in “”.  The contents to be added for each file is list below with explicit line numbers.  You must create these files exactly in order to see 
+                    quickly the TkDiff effect when diff-ing two text/code files.<br>
+                    <a id="file">FILE1:<br>
+                        1  left only, nothing on right side<br>
+                        2<br>
+                        3  SAME<br>
+                        4<br>
+                        5  left conflict.<br>
+                        6<br>
+                        7<br>
+                        <br>
+                    FILE2: <br>
+                        1<br>
+                        2  SAME<br>
+                        3<br>
+                        4  right conflict.<br>
+                        5<br>
+                        6  right only, nothing on left side<br>
+                    </a>
+                <li>Now you can launch TkDiff text/code difference debug tool.  You should Google search “TkDiff basics” or “TkDiff tutorial” to run thru some basics.  Once you mastered some of the basics of TkDiff, you will be able to even merge two files with conflicts similar to how Git-CMD-SHELL and GitHubDesktop implement conflict resolution.</li>
+                <li>To launch TkDiff, simply goto into your open Cygwin_Terminal command line window and type at command prompt “ tkdiff FILE1  FILE2 & “ .  See that RED means text in FILE1 but not in FILE2.  GREEN means text in FILE2 but not in FILE1.  BLUE means text in CONFLICT between FILE1 and FILE2.  “[N]-KEY” moves to next diff.  “[P]-KEY” moves to previous diff.  “[F]-KEY” will move to first diff; “[L]-KEY” will move to last diff.  Press “[R]-KEY” to refresh TkDiff window.  To quit, simple press “[Q]-KEY”.</li>
+            </ol>
+
+            <hr>
+
+            <center><h1 id="h11"> Now you rock ! </h1></center>
+            <img src="img/logo.png" class="rounded mx-auto d-block">
 
         </div>
 
